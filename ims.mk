@@ -13,30 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 LOCAL_PATH := vendor/mediatek/ims
-
 PRODUCT_SOONG_NAMESPACES += \
     vendor/mediatek/ims
-
-# ImsService
-PRODUCT_PACKAGES += \
-    ImsService
-
-# IMS Properties
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
-    persist.vendor.vilte_support=0 \
+    persist.vendor.vilte_support=1 \
     persist.vendor.ims_support=1 \
     persist.vendor.volte_support=1
-
 # MTK IMS Overlays
 PRODUCT_PACKAGES += \
     mtk-ims \
     mtk-ims-telephony
-
-# Permissions
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
